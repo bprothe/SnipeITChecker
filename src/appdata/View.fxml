@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="200.0" prefWidth="450.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appdata.Controller">
+    <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="250.0" tabClosingPolicy="UNAVAILABLE">
+        <Tab onSelectionChanged="#textClear" text="Check Out">
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                <Button fx:id="checkoutSubmitBtnID" layoutX="63.0" layoutY="115.0" mnemonicParsing="false" onAction="#checkoutSubmitBtn" prefHeight="25.0" prefWidth="115.0" text="Submit" />
+                <TextField fx:id="checkoutTextBox" layoutX="45.0" layoutY="70.0" onAction="#checkoutSubmit" />
+                <Text fx:id="checkoutText" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scan Employee ID" textAlignment="CENTER" wrappingWidth="250.0">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Text>
+            <Text fx:id="employeeIDError" fill="RED" layoutX="5.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cannot Find Employee" textAlignment="CENTER" visible="false" wrappingWidth="250.0">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="assetTagError" fill="RED" layoutX="5.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cannot Find Asset" textAlignment="CENTER" visible="false" wrappingWidth="250.0">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+            </AnchorPane>
+        </Tab>
+        <Tab onSelectionChanged="#textClear" text="Check In">
+            <AnchorPane prefHeight="200.0" prefWidth="250.0">
+                <Button layoutX="63.0" layoutY="115.0" mnemonicParsing="false" onAction="#checkinSubmit" prefHeight="25.0" prefWidth="115.0" text="Submit" />
+                <TextField fx:id="checkinTextBox" layoutX="45.0" layoutY="70.0" onAction="#checkinSubmit" />
+                <Text layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scan Asset Tag" textAlignment="CENTER" wrappingWidth="250.0">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Text>
+            </AnchorPane>
+        </Tab>
+        <Tab onSelectionChanged="#textClear" text="Employee Search">
+            <AnchorPane prefHeight="200.0" prefWidth="250.0">
+                <TextField fx:id="employeeSearch" layoutX="46.0" layoutY="14.0" promptText="Employee Name" />
+            <ListView fx:id="employeeList" layoutY="51.0" onMouseClicked="#mouseClickNameList" prefHeight="120.0" prefWidth="250.0" />
+            </AnchorPane>
+        </Tab>
+    </TabPane>
+    <ListView fx:id="changeList" layoutX="250.0" onMouseClicked="#mouseClickListView" prefHeight="167.0" prefWidth="200.0" />
+   <Button layoutX="292.0" layoutY="171.0" mnemonicParsing="false" onAction="#clearList" prefHeight="25.0" prefWidth="115.0" text="Clear All" />
+</AnchorPane>
