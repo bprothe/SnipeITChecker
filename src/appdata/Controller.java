@@ -235,7 +235,7 @@ public class Controller {
         checkOutTransaction = checkOutTransaction.substring(checkOutTransaction.indexOf("Checking out ")+13);
         String assetTag = checkOutTransaction.substring(0, checkOutTransaction.indexOf(" "));
         checkOutTransaction = checkOutTransaction.substring(checkOutTransaction.indexOf(" ") + 1);
-        String employeeID = checkOutTransaction.substring(checkOutTransaction.indexOf(" ") + 1);
+        String employeeID = checkOutTransaction.substring(checkOutTransaction.indexOf(" ") + 1, checkOutTransaction.indexOf("\""));
         employeeID = getEmployeeID(employeeID);
         OkHttpClient client = new OkHttpClient();
         MediaType mediaType = MediaType.parse("application/json");
